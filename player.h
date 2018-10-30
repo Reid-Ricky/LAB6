@@ -20,11 +20,13 @@ class Player
 {
   public:
     Player();
-
+    
+    //Parameter Constructor
     Player(string name) {
        myName = name;
     }
 
+    //GETTER: getName
     string getName() const {
        return myName;
     }

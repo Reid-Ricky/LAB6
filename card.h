@@ -12,9 +12,9 @@
 //
 // Accessor functions include
 //
-// int GetRank()      -- returns 1, 2, ..., 13 for ace, two, ..., king
+// int getRank()      -- returns 1, 2, ..., 13 for ace, two, ..., king
 //
-// bool SameSuitAs(c) -- returns true if same suit as Card c
+// bool sameSuitAs(c) -- returns true if same suit as Card c
 //
 // string suitString() -- returns "s", "h", "d" or "c"
 //

@@ -1,4 +1,5 @@
-// FILE: deck.h
+// File Name: deck.h
+//
 // written by Owen Astrachan and Roger Priebe
 // this class respresents a deck of cards
 // When a Deck is constructed, it contains 52 cards
@@ -17,6 +18,7 @@
 #define _DECK_H
 
 #include "card.h"
+using namespace std;
 
 
 class Deck
