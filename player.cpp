@@ -14,6 +14,11 @@
  * UTEID: rhl542
  * Section 5 digit ID: 16200
  *
+ * Name: Ricardo Guzman
+ * email address: r.guzman@utexas.edu
+ * UTEID: rg43989
+ * Section 5 digit ID: 16200
+ *
  */
 
 #include "card.h"

@@ -14,6 +14,12 @@
  * UTEID: rhl542
  * Section 5 digit ID: 16200
  *
+ * Name: Ricardo Guzman
+ * email address: r.guzman@utexas.edu
+ * UTEID: rg43989
+ * Section 5 digit ID: 16200
+ *
+ *
  */
 
 #include "card.h"
@@ -24,12 +30,12 @@ using namespace std;
 //Default Constructor
 // default card is ace of spades
 Card::Card() {
-   
 }
 
 //Parameter Constructor
 Card::Card(int rank, Suit s) {
-   
+   mySuit = s;
+   myRank = rank;
 }
 
 //FUNCTION: toString
@@ -41,13 +47,21 @@ string Card::toString() const {
 //FUNCTION: sameSuitAs
 // returns true if same suit as Card c
 bool Card::sameSuitAs(const Card &c) const {
+
+    if(this->mySuit == c.mySuit){
+        return true;
+    }
+    else {
+        return false;
+    }
+
    
 }
 
 //FUNCTION: getRank
 // returns 1, 2, ..., 13 for ace, two, ..., king
 int Card::getRank() const {
-   
+   return myRank;
 }
 
 //FUNCTION: suitString
