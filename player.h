@@ -1,4 +1,4 @@
-// FILE:  player.h
+// File Name:  player.h
 // written by Roger Priebe
 // 1/22/08 (revised 9/2/08)
 // This class represents a player in a card game that takes "tricks"
@@ -10,8 +10,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//
-
 #include "card.h"
 using namespace std;
 

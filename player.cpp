@@ -17,6 +17,7 @@
  */
 
 #include "card.h"
+#include "player.h"
 using namespace std;
 
 //Default Constructor
@@ -50,10 +51,54 @@ bool Player::rankInHand(Card c) const {
    
 }
 
-//FUNCTION: 
+//FUNCTION: chooseCardFromHand
+// uses some strategy to choose one card from the player's
+// hand so they can say "Do you have a 4?"
+Card Player::chooseCardFromHand() const {
 
+}
 
+//FUNCTION: cardInHand
+// Does the player have the card c in her hand?
+bool Player::cardInHand(Card c) const {
 
+}
+
+//FUNCTION: removeCardFromHand
+// Remove the card c from the hand and return it to the caller
+Card Player::removeCardFromHand(Card c) {
+
+}
+
+//FUNCTION: showHand
+// return string displaying the contents of the hand
+string Player::showHand() const {
+
+}
+
+//FUNCTION: showBooks
+// string displaying the books and their contents
+string Player::showBooks() const {
+
+}
+
+//FUNCTION:: getHandSize
+// integer of the number of cards in the hand
+int Player::getHandSize() const {
+
+}
+
+//FUNCTION: getBookSize
+// integer of the number of books by the player
+int Player::getBookSize() const {
+
+}
+
+//FUNCTION:
+// true if there are two cards of the same rank
+bool checkHandForPair(Card &c1, Card &c2) {
+
+}
 
 //FUNCTION: sameRankInHand
 // does the player have a card with the same rank as c in her hand?
