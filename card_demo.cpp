@@ -13,9 +13,7 @@ using namespace std;
 void dealHand(Deck &d, Player &p, int numCards);
 
 
-
-
-int main( )
+int main()
 {
     int numCards = 5;
     

@@ -94,7 +94,7 @@ int Player::getHandSize() const {
 }
 
 //FUNCTION: getBookSize
-// integer of the number of books by the player
+// integer of the number of cards in the book
 int Player::getBookSize() const {
 
 }

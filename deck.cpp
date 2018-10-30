@@ -27,7 +27,22 @@ using namespace std;
 //Default Constructor
 // pristine, sorted deck
 Deck::Deck() {
-   
+    int idx = 0;
+    for (int rank = 1; rank <= 13; rank++) {
+        for (int suit = 0; suit <= 3; suit++) {
+            if (suit == 0) {
+                myCards[idx] = Card(rank, Card::spades);
+            } else if (suit == 1) {
+                myCards[idx] = Card(rank, Card::hearts);
+            } else if (suit == 2) {
+                myCards[idx] = Card(rank, Card::diamonds);
+            } else {
+                myCards[idx] = Card(rank, Card::clubs);
+            }
+            idx++;
+        }
+    }
+    myIndex = 0;
 }
 
 //FUNCTION: shuffle
@@ -40,11 +55,23 @@ void Deck::shuffle() {
 //FUNCTION: dealCard
 // get a card, after 52 are dealt, fail
 Card Deck::dealCard() {
-   
+    Card c;
+    if (myIndex >= 52) {
+        c = myCards[myIndex];
+        myIndex++;
+    } else {
+        cout << "FAIL";
+    }
+    return c;
 }
 
 //FUNCTION: size
 // # cards left in the deck
 int Deck::size() const {
-   
+    int size = SIZE - myIndex;
+    if (size > 0) {
+        return size;
+    } else {
+        return 0;
+    }
 }
