@@ -21,6 +21,8 @@
  */
 
 #include "deck.h"
+#include <cstdlib>
+#include <ctime>
 #include "card.h"
 using namespace std;
 
@@ -43,13 +45,25 @@ Deck::Deck() {
         }
     }
     myIndex = 0;
+
 }
 
 //FUNCTION: shuffle
 // shuffle the deck, all 52 cards present
 // *calling shuffle again replenishes the deck
 void Deck::shuffle() {
-   
+    unsigned int currentTime = (unsigned) time(0);
+    srand(currentTime);
+    Card temp;
+    int randLength1 = 0;
+    int randLegth2 = 0;
+    for(int i =0; i < SIZE; i++){
+        randLength1 =  (rand() % SIZE);
+        randLegth2 =  (rand() % SIZE);
+        temp = myCards[randLength1];
+        myCards[randLength1] = myCards[randLegth2];
+        myCards[randLegth2] = temp;
+    }
 }
 
 //FUNCTION: dealCard
