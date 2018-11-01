@@ -11,23 +11,27 @@
 #include <string>
 #include <vector>
 #include "card.h"
+#include "deck.h"
 using namespace std;
 
 
 class Player
 {
   public:
-    Player();
+    //Default Constructor
+    Player() {
+        myName = "";
+    }
     
     //Parameter Constructor
     Player(string name) {
        myName = name;
-    }
+    };
 
     //GETTER: getName
     string getName() const {
        return myName;
-    }
+    };
     
     void addCard(Card c);  //adds a card to the hand
     void bookCards(Card c1, Card c2);

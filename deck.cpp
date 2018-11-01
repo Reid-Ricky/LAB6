@@ -45,7 +45,6 @@ Deck::Deck() {
         }
     }
     myIndex = 0;
-
 }
 
 //FUNCTION: shuffle
@@ -55,14 +54,14 @@ void Deck::shuffle() {
     unsigned int currentTime = (unsigned) time(0);
     srand(currentTime);
     Card temp;
-    int randLength1 = 0;
-    int randLegth2 = 0;
+    int randIdx1 = 0;
+    int randIdx2 = 0;
     for(int i =0; i < SIZE; i++){
-        randLength1 =  (rand() % SIZE);
-        randLegth2 =  (rand() % SIZE);
-        temp = myCards[randLength1];
-        myCards[randLength1] = myCards[randLegth2];
-        myCards[randLegth2] = temp;
+        randIdx1 =  (rand() % (SIZE - 1));
+        randIdx2 =  (rand() % (SIZE - 1));
+        temp = myCards[randIdx1];
+        myCards[randIdx1] = myCards[randIdx2];
+        myCards[randIdx2] = temp;
     }
 }
 
@@ -70,7 +69,7 @@ void Deck::shuffle() {
 // get a card, after 52 are dealt, fail
 Card Deck::dealCard() {
     Card c;
-    if (myIndex >= 52) {
+    if (myIndex < SIZE) {
         c = myCards[myIndex];
         myIndex++;
     } else {

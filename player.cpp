@@ -21,25 +21,26 @@
  *
  */
 
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <string>
 #include "card.h"
+#include "deck.h"
 #include "player.h"
 using namespace std;
-
-//Default Constructor
-Player::Player() {
-   
-}
 
 //FUNCTION: addCard
 // adds a card to the hand
 void Player::addCard(Card c) {
-   
+   myHand.push_back(c);
 }
 
 //FUNCTION: bookCards
 // 
 void Player::bookCards(Card c1, Card c2) {
-   
+   myBook.push_back(c1);
+   myBook.push_back(c2);
 }
 
 //FUNCTION: checkHandForBook
@@ -101,7 +102,7 @@ int Player::getBookSize() const {
 
 //FUNCTION:
 // true if there are two cards of the same rank
-bool checkHandForPair(Card &c1, Card &c2) {
+bool Player::checkHandForPair(Card &c1, Card &c2) {
 
 }
 
