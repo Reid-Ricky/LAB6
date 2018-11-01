@@ -29,6 +29,8 @@ using namespace std;
 //Default Constructor
 // pristine, sorted deck
 Deck::Deck() {
+    unsigned int currentTime = (unsigned) time(0);
+    srand(currentTime);
     int idx = 0;
     for (int rank = 1; rank <= 13; rank++) {
         for (int suit = 0; suit <= 3; suit++) {
@@ -51,17 +53,16 @@ Deck::Deck() {
 // shuffle the deck, all 52 cards present
 // *calling shuffle again replenishes the deck
 void Deck::shuffle() {
-    unsigned int currentTime = (unsigned) time(0);
-    srand(currentTime);
+
     Card temp;
     int randIdx1 = 0;
     int randIdx2 = 0;
     for(int i =0; i < SIZE; i++){
-        randIdx1 =  (rand() % (SIZE - 1));
-        randIdx2 =  (rand() % (SIZE - 1));
-        temp = myCards[randIdx1];
-        myCards[randIdx1] = myCards[randIdx2];
-        myCards[randIdx2] = temp;
+        randIdx1 =  (rand() % size());
+        randIdx2 =  (rand() % size());
+        temp = myCards[myIndex + randIdx1];
+        myCards[myIndex + randIdx1] = myCards[myIndex + randIdx2];
+        myCards[myIndex + randIdx2] = temp;
     }
 }
 

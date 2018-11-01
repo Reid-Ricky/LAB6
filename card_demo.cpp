@@ -22,6 +22,12 @@ int main()
     
     Deck d;  //create a deck of cards
     d.shuffle();
+    for(int i=0; i<48; i++){
+        d.dealCard();
+    }
+    d.shuffle();
+    d.shuffle();
+    d.shuffle();
 
 
    // dealHand(d, p1, numCards);
@@ -37,6 +43,6 @@ int main()
 
 void dealHand(Deck &d, Player &p, int numCards)
 {
-   for (int i=0; i < numCards; i++)
-      p.addCard(d.dealCard());
+  // for (int i=0; i < numCards; i++)
+     // p.addCard(d.dealCard());
 }
