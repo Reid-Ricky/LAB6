@@ -49,7 +49,7 @@ int main()
     //deal each player their cards
     dealHand(d, p1, numCards);
     dealHand(d, p2, numCards);
-    printHands(p1, p2);
+    //printHands(p1, p2);
 
     //check for starting pairs
     Card c1; //card1 to help store
@@ -87,18 +87,18 @@ int main()
         p2.removeCardFromHand(c2);
     }
 
-    printHands(p1,p2);
+    //printHands(p1,p2);
     //BEGIN GAME
     unsigned long counter = 0;
     while (((p1.getBookSize() + p2.getBookSize()) != 26)) {
-        printHands(p1,p2);
+        //printHands(p1,p2);
         bool turn = (counter % 2); //0 (Ricky) or 1 (Reid) depending on who's turn
         //Reid's Turn
         if (turn) {
             //prompt player
             Card prompt = p1.chooseCardFromHand();
             cout << "Reid asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
-            if (p2.rankInHand(prompt)) {
+            if (p2.getHandSize() > 0 && p2.rankInHand(prompt)) {
                 //response
                 cout << "Ricky says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
                 //remove cards from hands and book cards
@@ -141,7 +141,7 @@ int main()
             //prompt player
             Card prompt = p2.chooseCardFromHand();
             cout << "Ricky asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
-            if (p1.rankInHand(prompt)) {
+            if (p2.getHandSize() > 0 && p1.rankInHand(prompt)) {
                 //response
                 cout << "Reid says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
                 //remove cards from hands and book cards
@@ -178,8 +178,36 @@ int main()
                 }
                 counter++;
             }
+            cout << endl;
+        }
+        if (p1.getHandSize() == 0 && d.size() > 0) {
+            p1.addCard(d.dealCard());
+            counter++;
+        }
+        if (p2.getHandSize() == 0 && d.size() > 0) {
+            p2.addCard(d.dealCard());
+            counter++;
         }
     }
+
+    //END OF GAME and DECIDE WINNER
+    cout << "Reid's Books: \n" << p1.showBooks() << endl;
+    cout << "Ricky's Books: \n" << p2.showBooks() << endl;
+    if (p1.getBookSize() > p2.getBookSize()) {
+        cout << "REID has " << p1.getBookSize() << " books" << endl;
+        cout << "RICKY has " << p2.getBookSize() << " books" << endl;
+        cout << "***REID WINS***";
+    } else if (p1.getBookSize() < p2.getBookSize()) {
+        cout << "REID has " << p1.getBookSize() << " books" << endl;
+        cout << "RICKY has " << p2.getBookSize() << " books" << endl;
+        cout << "***RICKY WINS***";
+    } else {
+        cout << "REID has " << p1.getBookSize() << " books" << endl;
+        cout << "RICKY has " << p2.getBookSize() << " books" << endl;
+        cout << "***TIE***";
+    }
+
+
 
     return EXIT_SUCCESS;
 }
