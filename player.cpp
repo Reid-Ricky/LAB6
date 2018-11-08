@@ -123,7 +123,7 @@ string Player::showHand() const {
 string Player::showBooks() const {
     string output = "";
     for (int i = 0; i < myBook.size(); i = i + 2) {
-        output = output + myBook[i].toString() + " , " + myBook[i + 1].toString() + "\n";
+        output = output + myBook[i].toString() + ", " + myBook[i + 1].toString() + "\n";
     }
     return output;
 }

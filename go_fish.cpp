@@ -20,6 +20,9 @@
  *
  */
 
+/*
+
+
 #include <iostream>    // Provides cout and cin
 #include <cstdlib>     // Provides EXIT_SUCCESS
 #include "card.h"
@@ -33,11 +36,18 @@ using namespace std;
 //FUNCTION: dealHand
 void dealHand(Deck &d, Player &p, int numCards);
 
-//FUNCTION: print hands
+//FUNCTION: printHands
 void printHands(Player &p1, Player &p2);
+
+//FUNCTION: getBooked
+string getBooked(Card &c1, Card &c2);
+
+//FUNCTION: getDrawn
+string getDrawn(Card &c1);
 
 int main()
 {
+    cout << "***GO FISH***" << endl << endl;
     int numCards = 7; //standard # cards per player
 
     Player p1("Reid"); //player 1
@@ -45,11 +55,13 @@ int main()
 
     Deck d;  //create a deck of cards
     d.shuffle();
+    cout << "Shuffling cards..." << endl;
 
     //deal each player their cards
     dealHand(d, p1, numCards);
     dealHand(d, p2, numCards);
     //printHands(p1, p2);
+    cout << "Dealing cards..." << endl << endl;
 
     //check for starting pairs
     Card c1; //card1 to help store
@@ -59,33 +71,41 @@ int main()
         p1.bookCards(c1, c2);
         p1.removeCardFromHand(c1);
         p1.removeCardFromHand(c2);
+        cout << p1.getName() << " " << getBooked(c1, c2) << endl;
     }
     if (p1.checkHandForPair(c1, c2)) {
         p1.bookCards(c1, c2);
         p1.removeCardFromHand(c1);
         p1.removeCardFromHand(c2);
+        cout << p1.getName() << " " << getBooked(c1, c2) << endl;
     }
     if (p1.checkHandForPair(c1, c2)) {
         p1.bookCards(c1, c2);
         p1.removeCardFromHand(c1);
         p1.removeCardFromHand(c2);
+        cout << p1.getName() << " " << getBooked(c1, c2) << endl;
     }
     //player 2
     if (p2.checkHandForPair(c1, c2)) {
         p2.bookCards(c1, c2);
         p2.removeCardFromHand(c1);
         p2.removeCardFromHand(c2);
+        cout << p2.getName() << " " << getBooked(c1, c2) << endl;
     }
     if (p2.checkHandForPair(c1, c2)) {
         p2.bookCards(c1, c2);
         p2.removeCardFromHand(c1);
         p2.removeCardFromHand(c2);
+        cout << p2.getName() << " " << getBooked(c1, c2) << endl;
     }
     if (p2.checkHandForPair(c1, c2)) {
         p2.bookCards(c1, c2);
         p2.removeCardFromHand(c1);
         p2.removeCardFromHand(c2);
+        cout << p2.getName() << " " << getBooked(c1, c2) << endl;
     }
+
+    cout << endl << "LET THE GAME BEGIN!!!!!" << endl << endl;
 
     //printHands(p1,p2);
     //BEGIN GAME
@@ -97,10 +117,10 @@ int main()
         if (turn) {
             //prompt player
             Card prompt = p1.chooseCardFromHand();
-            cout << "Reid asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
+            cout << p1.getName() << " asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
             if (p2.getHandSize() > 0 && p2.rankInHand(prompt)) {
                 //response
-                cout << "Ricky says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
+                cout << p2.getName() << " says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
                 //remove cards from hands and book cards
                 Card c1 = p1.removeCardFromHand(prompt); //card1 to help store
                 Card c2; //card2 to help store
@@ -118,12 +138,15 @@ int main()
                     c2 = p2.removeCardFromHand(checkDiamonds);
                 }
                 p1.bookCards(c1, c2);
+                cout << p1.getName() << " " << getBooked(c1, c2) << endl;
             } else {
                 //response
-                cout << "Ricky says - Go Fish." << endl;
+                cout << p2.getName() << " says - Go Fish." << endl;
                 //draw
                 if (d.size() > 0) {
-                    p1.addCard(d.dealCard());
+                    Card deal = d.dealCard();
+                    p1.addCard(deal);
+                    cout << p1.getName() << " " << getDrawn(deal) << endl;
                     //immediately check for pair
                     Card c1; //card1 to help store
                     Card c2; //card2 to help store
@@ -131,6 +154,7 @@ int main()
                         p1.bookCards(c1, c2);
                         p1.removeCardFromHand(c1);
                         p1.removeCardFromHand(c2);
+                        cout << p1.getName() << " " << getBooked(c1, c2) << " because he drew a pair." << endl;
                     }
                 }
                 counter++;
@@ -140,10 +164,10 @@ int main()
         if (!turn) {
             //prompt player
             Card prompt = p2.chooseCardFromHand();
-            cout << "Ricky asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
+            cout << p2.getName() << " asks - Do you have a " << prompt.rankString(prompt.getRank()) << endl;
             if (p2.getHandSize() > 0 && p1.rankInHand(prompt)) {
                 //response
-                cout << "Reid says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
+                cout << p1.getName() << " says - Yes, I have a " << prompt.rankString(prompt.getRank()) << endl;
                 //remove cards from hands and book cards
                 Card c1 = p2.removeCardFromHand(prompt); //card1 to help store
                 Card c2; //card2 to help store
@@ -161,12 +185,15 @@ int main()
                     c2 = p1.removeCardFromHand(checkDiamonds);
                 }
                 p2.bookCards(c1, c2);
+                cout << p2.getName() << " " << getBooked(c1, c2) << endl;
             } else {
                 //response
-                cout << "Reid says - Go Fish." << endl;
+                cout << p1.getName() << " says - Go Fish." << endl;
                 //draw
                 if (d.size() > 0) {
-                    p2.addCard(d.dealCard());
+                    Card deal = d.dealCard();
+                    p2.addCard(deal);
+                    cout << p2.getName() << " " << getDrawn(deal) << endl;
                     //immediately check for pair
                     Card c1; //card1 to help store
                     Card c2; //card2 to help store
@@ -174,20 +201,25 @@ int main()
                         p2.bookCards(c1, c2);
                         p2.removeCardFromHand(c1);
                         p2.removeCardFromHand(c2);
+                        cout << p2.getName() << " " << getBooked(c1, c2) << " because he drew a pair." << endl;
                     }
                 }
                 counter++;
             }
-            cout << endl;
         }
         if (p1.getHandSize() == 0 && d.size() > 0) {
-            p1.addCard(d.dealCard());
+            Card deal = d.dealCard();
+            p1.addCard(deal);
+            cout << p1.getName() << " " << getDrawn(deal) << " because his hand was empty." << endl;
             counter++;
         }
         if (p2.getHandSize() == 0 && d.size() > 0) {
-            p2.addCard(d.dealCard());
+            Card deal = d.dealCard();
+            p2.addCard(deal);
+            cout << p2.getName() << " " << getDrawn(deal) << " because his hand was empty." << endl;
             counter++;
         }
+        cout << endl;
     }
 
     //END OF GAME and DECIDE WINNER
@@ -222,3 +254,13 @@ void printHands(Player &p1, Player &p2) {
     cout << p1.getName() <<" has : \n" << p1.showHand() << endl;
     cout << p2.getName() <<" has : \n" << p2.showHand() << endl;
 }
+
+string getBooked(Card &c1, Card &c2) {
+    return "books the " + c1.toString() + ", " + c2.toString();
+}
+
+string getDrawn(Card &c1) {
+    return "draws the " + c1.toString();
+}
+
+*/
