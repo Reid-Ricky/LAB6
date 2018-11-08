@@ -80,7 +80,6 @@ class Player
     
     
   private:
-          
     vector <Card> myHand;
     vector <Card> myBook;
     

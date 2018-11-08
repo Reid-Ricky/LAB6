@@ -79,7 +79,9 @@ Card Player::removeCardFromHand(Card c) {
 //FUNCTION: showHand
 // return string displaying the contents of the hand
 string Player::showHand() const {
-
+    for (int i = 0; i < myHand.size(); i++) {
+        cout << myHand[i].toString() << endl;
+    }
 }
 
 //FUNCTION: showBooks
@@ -91,7 +93,7 @@ string Player::showBooks() const {
 //FUNCTION:: getHandSize
 // integer of the number of cards in the hand
 int Player::getHandSize() const {
-
+    myHand.size();
 }
 
 //FUNCTION: getBookSize
@@ -102,14 +104,31 @@ int Player::getBookSize() const {
 
 //FUNCTION:
 // true if there are two cards of the same rank
+// Cards c1 and c2 contain the pair of equal cards if true
 bool Player::checkHandForPair(Card &c1, Card &c2) {
-
+    Card check;
+    for (int i = 0; i < myHand.size(); i++) {
+        check = myHand[i];
+        for (int j = i + 1; j < myHand.size(); j++) {
+           if (check == myHand[j]) {
+               c1 = check;
+               c2 = myHand[j];
+               return true;
+           }
+        }
+    }
+    return false;
 }
 
 //FUNCTION: sameRankInHand
 // does the player have a card with the same rank as c in her hand?
 // e.g. will return true if the player has a 7d and the parameter is 7c
 bool Player::sameRankInHand(Card c) const {
-   
+    for (int i = 0; i < myHand.size(); i++) {
+        if (myHand[i] == c) {
+            return true;
+        }
+    }
+    return false;
 }
 
