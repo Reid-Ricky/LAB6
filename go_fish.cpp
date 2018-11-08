@@ -35,9 +35,10 @@ void dealHand(Deck &d, Player &p, int numCards);
 
 int main()
 {
-    int numCards = 5;
-    Player p1("Joe");
-    Player p2("Jane");
+    int numCards = 7; //standard # cards per player
+
+    Player p1("Joe"); //player 1
+    Player p2("Jane"); //player 2
 
     Deck d;  //create a deck of cards
     //d.shuffle();
