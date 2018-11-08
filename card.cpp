@@ -120,7 +120,7 @@ string Card::rankString(int r) const {
 
 //OPERATOR:: Equality
 bool Card::operator == (const Card &rhs) const {
-   if (myRank == rhs.getRank()) {
+   if (myRank == rhs.getRank() && this->sameSuitAs(rhs) ) {
        return true;
    } else {
        return false;
@@ -129,7 +129,7 @@ bool Card::operator == (const Card &rhs) const {
 
 //OPERATOR:: Inequality
 bool Card::operator != (const Card &rhs) const {
-    if (myRank != rhs.getRank()) {
+    if (myRank != rhs.getRank() && !(this->sameSuitAs(rhs))) {
         return true;
     } else {
         return false;

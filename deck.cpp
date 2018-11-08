@@ -53,7 +53,6 @@ Deck::Deck() {
 // shuffle the deck, all 52 cards present
 // *calling shuffle again replenishes the deck
 void Deck::shuffle() {
-
     Card temp;
     int randIdx1 = 0;
     int randIdx2 = 0;

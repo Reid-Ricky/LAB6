@@ -10,6 +10,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 #include "card.h"
 #include "deck.h"
 using namespace std;
@@ -26,6 +28,8 @@ class Player
     //Parameter Constructor
     Player(string name) {
        myName = name;
+       unsigned int currentTime = (unsigned) time(0);
+       srand(currentTime);
     };
 
     //GETTER: getName
