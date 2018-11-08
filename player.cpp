@@ -137,7 +137,7 @@ int Player::getHandSize() const {
 //FUNCTION: getBookSize
 // integer of the number of cards in the book
 int Player::getBookSize() const {
-    return myBook.size();
+    return (myBook.size() / 2);
 }
 
 //FUNCTION:
@@ -169,4 +169,3 @@ bool Player::sameRankInHand(Card c) const {
     }
     return false;
 }
-
