@@ -65,8 +65,8 @@ bool Player::checkHandForBook(Card &c1, Card &c2) {
 //FUNCTION: rankInHand
 // Does the player have a card with the same rank as c in her hand?
 bool Player::rankInHand(Card c) const {
-    for (int i = 0; i < getHandSize(); i++){
-        if (myHand[i].getRank() == c.getRank()){
+    for (int i = 0; i < getHandSize(); i++) {
+        if (myHand[i].getRank() == c.getRank()) {
             return true;
         }
     }
@@ -84,8 +84,8 @@ Card Player::chooseCardFromHand() const {
 //FUNCTION: cardInHand
 // Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const {
-    for(int i = 0; i < myHand.size(); i++){
-        if(myHand[i] == c){
+    for(int i = 0; i < myHand.size(); i++) {
+        if(myHand[i] == c) {
             return true;
         }
     }
@@ -96,14 +96,16 @@ bool Player::cardInHand(Card c) const {
 // Remove the card c from the hand and return it to the caller
 // precondition: card must be known to be in hand.
 Card Player::removeCardFromHand(Card c) {
-    int idx = -1;
-    for(int i=0;i<getHandSize();i++){
+    int idx;
+    Card temp;
+    for(int i = 0; i < getHandSize(); i++) {
         if(myHand[i] == c){
             idx = i;
         }
     }
-
-
+    temp = myHand[idx];
+    myHand.erase(myHand.begin() + idx);
+    return temp;
 }
 
 //FUNCTION: showHand
