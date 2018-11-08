@@ -48,7 +48,18 @@ void Player::bookCards(Card c1, Card c2) {
 // If a pair is found, it returns true and populates the
 // two variables with the cards tha make the pair.
 bool Player::checkHandForBook(Card &c1, Card &c2) {
-   
+    Card check;
+    for (int i = 0; i < myHand.size(); i++) {
+        check = myHand[i];
+        for (int j = i + 1; j < myHand.size(); j++) {
+            if (check == myHand[j]) {
+                c1 = check;
+                c2 = myHand[j];
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 //FUNCTION: rankInHand
@@ -87,7 +98,9 @@ string Player::showHand() const {
 //FUNCTION: showBooks
 // string displaying the books and their contents
 string Player::showBooks() const {
-
+    for (int i = 0; i < myBook.size(); i++) {
+        cout << myBook[i].toString() << endl;
+    }
 }
 
 //FUNCTION:: getHandSize
@@ -99,7 +112,7 @@ int Player::getHandSize() const {
 //FUNCTION: getBookSize
 // integer of the number of cards in the book
 int Player::getBookSize() const {
-
+    myBook.size();
 }
 
 //FUNCTION:
