@@ -52,7 +52,7 @@ bool Player::checkHandForBook(Card &c1, Card &c2) {
     for (int i = 0; i < myHand.size(); i++) {
         check = myHand[i];
         for (int j = i + 1; j < myHand.size(); j++) {
-            if (check == myHand[j]) {
+            if (check.getRank() == myHand[j].getRank()) {
                 c1 = check;
                 c2 = myHand[j];
                 return true;
@@ -65,26 +65,26 @@ bool Player::checkHandForBook(Card &c1, Card &c2) {
 //FUNCTION: rankInHand
 // Does the player have a card with the same rank as c in her hand?
 bool Player::rankInHand(Card c) const {
-    for (int i =0;i < getHandSize();i++){
+    for (int i = 0; i < getHandSize(); i++){
         if (myHand[i].getRank() == c.getRank()){
             return true;
         }
     }
     return false;
-   
 }
 
 //FUNCTION: chooseCardFromHand
-// uses some strategy to choose one card from the player's
+// randomly picks a card to ask
 // hand so they can say "Do you have a 4?"
 Card Player::chooseCardFromHand() const {
-
+    int idx = (rand() % myHand.size());
+    return myHand[idx];
 }
 
 //FUNCTION: cardInHand
 // Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const {
-    for(int i=0;i< getHandSize();i++){
+    for(int i = 0; i < myHand.size(); i++){
         if(myHand[i] == c){
             return true;
         }
@@ -109,29 +109,33 @@ Card Player::removeCardFromHand(Card c) {
 //FUNCTION: showHand
 // return string displaying the contents of the hand
 string Player::showHand() const {
+    string output = "";
     for (int i = 0; i < myHand.size(); i++) {
-        cout << myHand[i].toString() << endl;
+        output = output + myHand[i].toString() + "\n";
     }
+    return output;
 }
 
 //FUNCTION: showBooks
 // string displaying the books and their contents
 string Player::showBooks() const {
+    string output = "";
     for (int i = 0; i < myBook.size(); i++) {
-        cout << myBook[i].toString() << endl;
+        output = output + myBook[i].toString() + "\n";
     }
+    return output;
 }
 
 //FUNCTION:: getHandSize
 // integer of the number of cards in the hand
 int Player::getHandSize() const {
-    myHand.size();
+    return myHand.size();
 }
 
 //FUNCTION: getBookSize
 // integer of the number of cards in the book
 int Player::getBookSize() const {
-    myBook.size();
+    return myBook.size();
 }
 
 //FUNCTION:
@@ -142,7 +146,7 @@ bool Player::checkHandForPair(Card &c1, Card &c2) {
     for (int i = 0; i < myHand.size(); i++) {
         check = myHand[i];
         for (int j = i + 1; j < myHand.size(); j++) {
-           if (check == myHand[j]) {
+           if (check.getRank() == myHand[j].getRank()) {
                c1 = check;
                c2 = myHand[j];
                return true;
@@ -157,7 +161,7 @@ bool Player::checkHandForPair(Card &c1, Card &c2) {
 // e.g. will return true if the player has a 7d and the parameter is 7c
 bool Player::sameRankInHand(Card c) const {
     for (int i = 0; i < myHand.size(); i++) {
-        if (myHand[i] == c) {
+        if (myHand[i].getRank() == c.getRank()) {
             return true;
         }
     }
