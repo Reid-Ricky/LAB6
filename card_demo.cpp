@@ -14,7 +14,9 @@ using namespace std;
 void dealHand(Deck &d, Player &p, int numCards);
 
 
-int main()
+
+
+int main( )
 {
     int numCards = 5;
     
@@ -22,13 +24,11 @@ int main()
     Player p2("Jane");
     
     Deck d;  //create a deck of cards
-    //d.shuffle();
-
-    Card test(1, Card::spades);
+    d.shuffle();
+    
     dealHand(d, p1, numCards);
     dealHand(d, p2, numCards);
-    p1.removeCardFromHand(test);
-    cout << p2.getHandSize() << endl;
+       
     cout << p1.getName() <<" has : " << p1.showHand() << endl;
     cout << p2.getName() <<" has : " << p2.showHand() << endl;
     

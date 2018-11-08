@@ -29,8 +29,10 @@ using namespace std;
 //Default Constructor
 // pristine, sorted deck
 Deck::Deck() {
+    //Random Seeder using the clock
     unsigned int currentTime = (unsigned) time(0);
     srand(currentTime);
+    //creates 52 cards (13*4)
     int idx = 0;
     for (int rank = 1; rank <= 13; rank++) {
         for (int suit = 0; suit <= 3; suit++) {
@@ -50,8 +52,10 @@ Deck::Deck() {
 }
 
 //FUNCTION: shuffle
-// shuffle the deck, all 52 cards present
-// *calling shuffle again replenishes the deck
+// shuffle the deck of any valid size
+// Precondition: deck must not be empty
+// INPUT: N/A
+// OUTPUT: N/A
 void Deck::shuffle() {
     Card temp;
     int randIdx1 = 0;
@@ -67,19 +71,22 @@ void Deck::shuffle() {
 
 //FUNCTION: dealCard
 // get a card, after 52 are dealt, fail
+// Precondition: deck is not empty
+// INPUT: N/A
+// OUTPUT: card at "top" of deck
 Card Deck::dealCard() {
     Card c;
     if (myIndex < SIZE) {
         c = myCards[myIndex];
         myIndex++;
-    } else {
-        cout << "FAIL";
     }
     return c;
 }
 
 //FUNCTION: size
-// # cards left in the deck
+// number of cards left in the deck
+// INPUT: N/A
+// OUTPUT: integer of cards left
 int Deck::size() const {
     int size = SIZE - myIndex;
     if (size > 0) {

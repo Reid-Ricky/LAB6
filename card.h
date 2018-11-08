@@ -31,14 +31,13 @@ class Card
 {
   public:
 
-
     enum Suit {spades, hearts, diamonds, clubs};
     
     Card();          // default, ace of spades
 
-    Card(int rank, Suit s);
+    Card(int rank, Suit s);    //parameter constructor
 
-    string toString()              const;  // return string version e.g. Ac 4h Js
+    string toString() const;  // return string version e.g. Ac 4h Js
     bool sameSuitAs(const Card& c) const;  // true if suit same as c
     int  getRank()                 const;  // return rank, 1..13
     string suitString(Suit s)      const;  // return "s", "h",...

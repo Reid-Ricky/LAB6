@@ -1,0 +1,264 @@
+***GO FISH***
+
+Shuffling cards...
+Dealing cards...
+
+Reid's initial hand:
+Ah
+3h
+As
+Ac
+9d
+10h
+Jh
+
+Ricky's initial hand:
+6h
+6s
+Jc
+2h
+5c
+Qd
+4h
+
+Reid books the Ah, As
+Ricky books the 6h, 6s
+
+LET THE GAME BEGIN!!!!!
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the 6d
+
+Reid asks - Do you have a A
+Ricky says - Go Fish.
+Reid draws the 10d
+Reid books the 10h, 10d because he drew a pair.
+
+Ricky asks - Do you have a 5
+Reid says - Go Fish.
+Ricky draws the 6c
+Ricky books the 6d, 6c because he drew a pair.
+
+Reid asks - Do you have a A
+Ricky says - Go Fish.
+Reid draws the 9s
+Reid books the 9d, 9s because he drew a pair.
+
+Ricky asks - Do you have a 5
+Reid says - Go Fish.
+Ricky draws the 5d
+Ricky books the 5c, 5d because he drew a pair.
+
+Reid asks - Do you have a A
+Ricky says - Go Fish.
+Reid draws the 9h
+
+Ricky asks - Do you have a J
+Reid says - Yes, I have a J
+Ricky books the Jc, Jh
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the Kh
+
+Reid asks - Do you have a 3
+Ricky says - Go Fish.
+Reid draws the 3c
+Reid books the 3h, 3c because he drew a pair.
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the 4s
+Ricky books the 4h, 4s because he drew a pair.
+
+Reid asks - Do you have a A
+Ricky says - Go Fish.
+Reid draws the 8h
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the 7s
+
+Reid asks - Do you have a 9
+Ricky says - Go Fish.
+Reid draws the 5s
+
+Ricky asks - Do you have a Q
+Reid says - Go Fish.
+Ricky draws the 8s
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the 7c
+
+Ricky asks - Do you have a 8
+Reid says - Yes, I have a 8
+Ricky books the 8s, 8h
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the Qh
+Ricky books the Qd, Qh because he drew a pair.
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the 8d
+
+Ricky asks - Do you have a 2
+Reid says - Go Fish.
+Ricky draws the 8c
+
+Reid asks - Do you have a 8
+Ricky says - Yes, I have a 8
+Reid books the 8d, 8c
+
+Reid asks - Do you have a A
+Ricky says - Go Fish.
+Reid draws the 10s
+
+Ricky asks - Do you have a K
+Reid says - Go Fish.
+Ricky draws the 2d
+Ricky books the 2h, 2d because he drew a pair.
+
+Reid asks - Do you have a 9
+Ricky says - Go Fish.
+Reid draws the Ad
+Reid books the Ac, Ad because he drew a pair.
+
+Ricky asks - Do you have a K
+Reid says - Go Fish.
+Ricky draws the 3d
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the Qs
+
+Ricky asks - Do you have a 7
+Reid says - Yes, I have a 7
+Ricky books the 7s, 7c
+
+Ricky asks - Do you have a 3
+Reid says - Go Fish.
+Ricky draws the 4d
+
+Reid asks - Do you have a Q
+Ricky says - Go Fish.
+Reid draws the 2s
+
+Ricky asks - Do you have a 4
+Reid says - Go Fish.
+Ricky draws the 2c
+
+Reid asks - Do you have a Q
+Ricky says - Go Fish.
+Reid draws the 10c
+Reid books the 10s, 10c because he drew a pair.
+
+Ricky asks - Do you have a 2
+Reid says - Yes, I have a 2
+Ricky books the 2c, 2s
+
+Ricky asks - Do you have a 4
+Reid says - Go Fish.
+Ricky draws the Kd
+Ricky books the Kh, Kd because he drew a pair.
+
+Reid asks - Do you have a Q
+Ricky says - Go Fish.
+Reid draws the Kc
+
+Ricky asks - Do you have a 4
+Reid says - Go Fish.
+Ricky draws the Jd
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the 7h
+
+Ricky asks - Do you have a 3
+Reid says - Go Fish.
+Ricky draws the 9c
+
+Reid asks - Do you have a 7
+Ricky says - Go Fish.
+Reid draws the 7d
+Reid books the 7h, 7d because he drew a pair.
+
+Ricky asks - Do you have a 3
+Reid says - Go Fish.
+Ricky draws the 4c
+Ricky books the 4d, 4c because he drew a pair.
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the Qc
+Reid books the Qs, Qc because he drew a pair.
+
+Ricky asks - Do you have a 9
+Reid says - Yes, I have a 9
+Ricky books the 9c, 9h
+
+Ricky asks - Do you have a 3
+Reid says - Go Fish.
+Ricky draws the Ks
+
+Reid asks - Do you have a K
+Ricky says - Yes, I have a K
+Reid books the Kc, Ks
+
+Reid asks - Do you have a 5
+Ricky says - Go Fish.
+Reid draws the Js
+
+Ricky asks - Do you have a J
+Reid says - Yes, I have a J
+Ricky books the Jd, Js
+
+Ricky asks - Do you have a 3
+Reid says - Go Fish.
+Ricky draws the 5h
+
+Reid asks - Do you have a 5
+Ricky says - Yes, I have a 5
+Reid books the 5s, 5h
+Reid draws the 3s because his hand was empty.
+
+Ricky asks - Do you have a 3
+Reid says - Yes, I have a 3
+Ricky books the 3d, 3s
+
+Reid's Books: 
+Ah, As
+10h, 10d
+9d, 9s
+3h, 3c
+8d, 8c
+Ac, Ad
+10s, 10c
+7h, 7d
+Qs, Qc
+Kc, Ks
+5s, 5h
+
+Ricky's Books: 
+6h, 6s
+6d, 6c
+5c, 5d
+Jc, Jh
+4h, 4s
+8s, 8h
+Qd, Qh
+2h, 2d
+7s, 7c
+2c, 2s
+Kh, Kd
+4d, 4c
+9c, 9h
+Jd, Js
+3d, 3s
+
+Reid has 11 books
+Ricky has 15 books
+***RICKY WINS***

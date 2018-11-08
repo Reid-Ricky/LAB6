@@ -32,38 +32,25 @@ using namespace std;
 
 //FUNCTION: addCard
 // adds a card to the hand
+// INPUT: card to be added
+// OUTPUT: N/A
 void Player::addCard(Card c) {
    myHand.push_back(c);
 }
 
 //FUNCTION: bookCards
-// 
+// add pair of cards to the book
+// INPUT: card1, card2 to be added
+// OUTPUT: N/A
 void Player::bookCards(Card c1, Card c2) {
    myBook.push_back(c1);
    myBook.push_back(c2);
 }
 
-//FUNCTION: checkHandForBook
-// checks a players hand for a pair. 
-// If a pair is found, it returns true and populates the
-// two variables with the cards tha make the pair.
-bool Player::checkHandForBook(Card &c1, Card &c2) {
-    Card check;
-    for (int i = 0; i < myHand.size(); i++) {
-        check = myHand[i];
-        for (int j = i + 1; j < myHand.size(); j++) {
-            if (check.getRank() == myHand[j].getRank()) {
-                c1 = check;
-                c2 = myHand[j];
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
 //FUNCTION: rankInHand
 // Does the player have a card with the same rank as c in her hand?
+// INPUT: card (rank is only important characteristic
+// OUTPUT: boolean
 bool Player::rankInHand(Card c) const {
     for (int i = 0; i < getHandSize(); i++) {
         if (myHand[i].getRank() == c.getRank()) {
@@ -76,13 +63,17 @@ bool Player::rankInHand(Card c) const {
 //FUNCTION: chooseCardFromHand
 // randomly picks a card to ask
 // hand so they can say "Do you have a 4?"
+// INPUT: N/A
+// OUTPUT: card randomly chosen from hand
 Card Player::chooseCardFromHand() const {
-    int idx = (rand() % myHand.size());
+    int idx = (rand() % myHand.size()); //random valid idx value
     return myHand[idx];
 }
 
 //FUNCTION: cardInHand
 // Does the player have the card c in her hand?
+// INPUT: card to check if present
+// OUTPUT: boolean
 bool Player::cardInHand(Card c) const {
     for(int i = 0; i < myHand.size(); i++) {
         if(myHand[i] == c) {
@@ -94,7 +85,9 @@ bool Player::cardInHand(Card c) const {
 
 //FUNCTION: removeCardFromHand
 // Remove the card c from the hand and return it to the caller
-// precondition: card must be known to be in hand.
+// Precondition: card must be known to be in hand.
+// INPUT: card to be removed
+// OUTPUT: card that is removed
 Card Player::removeCardFromHand(Card c) {
     int idx;
     Card temp;
@@ -104,12 +97,14 @@ Card Player::removeCardFromHand(Card c) {
         }
     }
     temp = myHand[idx];
-    myHand.erase(myHand.begin() + idx);
+    myHand.erase(myHand.begin() + idx); //delete card at idx
     return temp;
 }
 
 //FUNCTION: showHand
 // return string displaying the contents of the hand
+// INPUT: N/A
+// OUTPUT: string concatenation of cards in hand
 string Player::showHand() const {
     string output = "";
     for (int i = 0; i < myHand.size(); i++) {
@@ -120,6 +115,8 @@ string Player::showHand() const {
 
 //FUNCTION: showBooks
 // string displaying the books and their contents
+// INPUT: N/A
+// OUTPUT: string concatenation of the books
 string Player::showBooks() const {
     string output = "";
     for (int i = 0; i < myBook.size(); i = i + 2) {
@@ -130,19 +127,25 @@ string Player::showBooks() const {
 
 //FUNCTION:: getHandSize
 // integer of the number of cards in the hand
+// INPUT: N/A
+// OUTPUT: integer of amount of cards in hand
 int Player::getHandSize() const {
     return myHand.size();
 }
 
 //FUNCTION: getBookSize
-// integer of the number of cards in the book
+// integer of the number of pairs in the book
+// INPUT: N/A
+// OUTPUT: integer of amount of books (pairs)
 int Player::getBookSize() const {
     return (myBook.size() / 2);
 }
 
-//FUNCTION:
-// true if there are two cards of the same rank
+//FUNCTION: checkHandForPair
+// true if there are two cards of the same rank (pair)
 // Cards c1 and c2 contain the pair of equal cards if true
+// INPUT: card1, card2 to be populated with the pair
+// OUTPUT: boolean
 bool Player::checkHandForPair(Card &c1, Card &c2) {
     Card check;
     for (int i = 0; i < myHand.size(); i++) {
@@ -153,18 +156,6 @@ bool Player::checkHandForPair(Card &c1, Card &c2) {
                c2 = myHand[j];
                return true;
            }
-        }
-    }
-    return false;
-}
-
-//FUNCTION: sameRankInHand
-// does the player have a card with the same rank as c in her hand?
-// e.g. will return true if the player has a 7d and the parameter is 7c
-bool Player::sameRankInHand(Card c) const {
-    for (int i = 0; i < myHand.size(); i++) {
-        if (myHand[i].getRank() == c.getRank()) {
-            return true;
         }
     }
     return false;

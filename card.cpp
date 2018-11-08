@@ -42,6 +42,8 @@ Card::Card(int rank, Suit s) {
 
 //FUNCTION: toString
 // converts a card to a string, e.g. Ac 4h Js, to print
+// INPUT: N/A
+// OUTPUT: string concatenation of card
 string Card::toString() const {
     string s;
     s = rankString(myRank) + suitString(mySuit);
@@ -50,6 +52,8 @@ string Card::toString() const {
 
 //FUNCTION: sameSuitAs
 // returns true if same suit as Card c
+// INPUT: card
+// OUTPUT: boolean
 bool Card::sameSuitAs(const Card &c) const {
      if (this->mySuit == c.mySuit){
         return true;
@@ -62,6 +66,8 @@ bool Card::sameSuitAs(const Card &c) const {
 
 //FUNCTION: getRank
 // returns 1, 2, ..., 13 for ace, two, ..., king
+// INPUT: N/A
+// OUTPUT: integer of rank
 int Card::getRank() const {
    return myRank;
 }
@@ -69,6 +75,8 @@ int Card::getRank() const {
 //FUNCTION: suitString
 // returns "s", "h", "d" or "c"
 // Precondition: passed a valid suit
+// INPUT: suit of card
+// OUTPUT: string version of suit
 string Card::suitString(Suit s) const {
     string suit;
     if (s == spades) {
@@ -86,6 +94,8 @@ string Card::suitString(Suit s) const {
 //FUNCTION: rankString
 // returns "A", "2", ..."Q"
 // Precondition: passed a valid rank
+// INPUT: integer rank of card
+// OUTPUT: string version of rank
 string Card::rankString(int r) const {
     string rank;
     if (r == 1) {
@@ -120,7 +130,7 @@ string Card::rankString(int r) const {
 
 //OPERATOR:: Equality
 bool Card::operator == (const Card &rhs) const {
-   if (myRank == rhs.getRank() && this->sameSuitAs(rhs) ) {
+   if (myRank == rhs.getRank() && this->sameSuitAs(rhs)) {
        return true;
    } else {
        return false;
@@ -129,7 +139,7 @@ bool Card::operator == (const Card &rhs) const {
 
 //OPERATOR:: Inequality
 bool Card::operator != (const Card &rhs) const {
-    if (myRank != rhs.getRank() && !(this->sameSuitAs(rhs))) {
+    if (myRank != rhs.getRank() || (this->sameSuitAs(rhs) == false)) {
         return true;
     } else {
         return false;
