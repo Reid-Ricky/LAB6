@@ -1,0 +1,3 @@
+C:/EE312/assignment6Git/LAB6/cmake-build-debug/CMakeFiles/LAB6.dir
+C:/EE312/assignment6Git/LAB6/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/EE312/assignment6Git/LAB6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
