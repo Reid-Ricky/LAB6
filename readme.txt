@@ -1,5 +1,3 @@
-//READ ME File
-
 GoFish-
    (1) Download and unzip the zipped file
    (2) Open linux, compile the program using the makefile by typing
